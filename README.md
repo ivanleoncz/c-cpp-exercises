@@ -1,2 +1,2 @@
-# cpp-exercises
-Recording my learning on C++
+# c-cpp-exercises
+Random exercices of C and C++.
