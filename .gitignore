@@ -35,5 +35,8 @@
 *-Debug/
 
 # Cmake temp
-*.txt.user.*
-
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+*.cmake
+.cmake/
+.qtc/
