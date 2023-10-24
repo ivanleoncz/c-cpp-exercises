@@ -3,21 +3,24 @@
 using namespace std;
 
 int sumArray(int arrayOfNumbers[10], int operation, int &amountOfInputs) {
+
     // First input is separated from the iteration of the array, in order to
     // perform operation and replace.
     int result = arrayOfNumbers[0];
+
     // And iteration over array of numbers starts from index 1.
     for (int i = 1; i < amountOfInputs; i++ ) {
         if (operation == 1) {
-            result+= arrayOfNumbers[i];
+            result += arrayOfNumbers[i];
         } else if (operation == 2) {
-            result-= arrayOfNumbers[i];
+            result -= arrayOfNumbers[i];
         } else if (operation == 3) {
-            result*= arrayOfNumbers[i];
+            result *= arrayOfNumbers[i];
         } else if (operation == 4) {
-            result/= arrayOfNumbers[i];
+            result /= arrayOfNumbers[i];
         }
     }
+
     return result;
 }
 
@@ -28,13 +31,15 @@ int main()
     int amountOfInputs;
     int operation; // 1: sum, 2: subtract, 3: multiply, 4: divide
     int input;
-    bool correctInput = false;
+    bool askInput = true;
 
-    while (!correctInput) {
+    while (askInput) {
+
         cout << "\nHow many numbers do you want to input (max -> " << ARRAY_SIZE << "): ";
         cin >> amountOfInputs;
+
         if (amountOfInputs > 0 && amountOfInputs < 10) {
-            correctInput = true;
+            askInput = false;
         } else {
             cout << "[error]: from 1 to 10, please" << endl;
         }
@@ -48,8 +53,8 @@ int main()
         }
     }
 
-    correctInput = false;
-    while (!correctInput) {
+    askInput = false;
+    while (!askInput) {
         cout << "\n\nWhat operation should be performed with the numbers ?" << endl;
         cout << "1: sum" << endl;
         cout << "2: subtract" << endl;
@@ -57,7 +62,7 @@ int main()
         cout << "4: divide" << endl;
         cin >> operation;
         if (operation >= 1 && operation <= 4) {
-            correctInput = true;
+            askInput = true;
         } else {
             cout << "[error]: select one of the arithmetic operations, from 1 to 4";
         }
