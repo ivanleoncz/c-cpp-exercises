@@ -35,8 +35,11 @@
 *-Debug/
 
 # Cmake temp
+CMakeLists.txt
 CMakeLists.txt.user
 CMakeLists.txt.user.*
 *.cmake
 .cmake/
 .qtc/
+
+*/.gitignore
